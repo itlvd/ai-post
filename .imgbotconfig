@@ -1,0 +1,10 @@
+{
+    "schedule": "daily",
+    "ignoredFiles": [
+        "*.ico",
+        "*favicon*",
+        "logo.png",
+    ],
+    "aggressiveCompression": "true",
+    "compressWiki": "true",
+}
