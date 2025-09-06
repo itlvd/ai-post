@@ -1,0 +1,48 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+theme = 'FixIt'
+publishDir = 'public'
+
+[module]
+  [[module.imports]]
+    path = 'github.com/hugo-fixit/FixIt'
+    disable = false
+
+# Disable related content to prevent the error
+[related]
+  includeNewer = false
+  threshold = 80
+  toLower = false
+
+[build]
+  noChmod = true
+  noTimes = true
+  useResourceCacheWhen = "fallback"
+  writeStats = false
+
+[params]
+  # Disable related content in the theme
+  [params.post]
+    related = { enable = false }
+
+  # Theme settings
+  [params.theme]
+    darkMode = true
+    colorScheme = "auto"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Posts"
+    url = "/posts/"
+    weight = 2
+
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 3
