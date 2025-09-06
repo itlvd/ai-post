@@ -1,8 +1,237 @@
-// ==============================
-// Override Variables
-// 覆盖变量
-// ==============================
-$global-background-color: #faf8ff !default;
-$global-background-color-dark: #292a2d !default;
-$global-background-card-color: #fff !default;
-$global-background-card-color-dark: #333 !default;
+$global-background-card-color: #fff !important;
+$global-background-card-color-dark: #333 !important;
+
+.home.posts .summary:not(:last-of-type)::after {
+  content: unset !important;
+}
+
+.summary-card {
+  margin: 0 auto;
+  display: flex;
+  list-style: none;
+  align-items: stretch;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding-top: 1rem;
+}
+
+.home-wide {
+  max-width: 80% !important;
+  width: 100% !important;
+}
+
+.home-wide.posts .summary {
+  background: $global-background-card-color;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-radius: .5rem;
+  color: $global-font-color;
+  width: 49%;
+  transition: transform .4s ease;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2);
+  display: flex;
+  flex-direction: column;
+
+  .single-title {
+    font-size: 1.25rem;
+    line-height: 140%;
+    margin: .4rem 1rem;
+    padding-top: 1rem;
+  }
+
+  .post-meta {
+    font-size: .875rem;
+    margin: 0 1rem .5rem;
+    color: #b1b1ba;
+    margin-top: auto;
+  }
+
+  .content {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    margin: 0 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    color: #b1b1ba;
+  }
+
+  .post-footer {
+    margin: .5rem 1rem 0;
+    font-size: .875rem;
+  }
+
+  .post-footer .post-tags a {
+    color: #b1b1ba;
+    display: inline-block;
+    line-height: 26px;
+    padding: 0 10px;
+    margin: 0 5px 5px 0;
+    text-decoration: none;
+    border-radius: .25rem;
+    border: 1px solid;
+    transition: color .2s;
+  }
+}
+
+.single .post-footer .post-tags .post-tag:not(:last-child)::after {
+  content: none !important;
+}
+
+@media (min-width: 1440px) {
+  .page-wide {
+    max-width: 50% !important;
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 1440px) {
+  %page-style {
+    width: 56%;
+
+    [data-page-style='wide'] & {
+      width: 60%;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  %page-style {
+    width: 52%;
+
+    [data-page-style='wide'] & {
+      width: 56%;
+    }
+  }
+
+  #header-desktop .header-wrapper {
+    padding-right: 1rem;
+  }
+
+  .search-dropdown.desktop {
+    right: 1rem;
+  }
+}
+
+@media (max-width: 960px) {
+  %page-style {
+    width: 80% !important;
+  }
+
+  aside {
+    display: none !important;
+  }
+
+  #toc-static {
+    display: block;
+  }
+
+  #header-desktop .header-wrapper {
+    padding-left: 1rem;
+  }
+
+  .summary-card {
+    display: block !important;
+  }
+
+  .summary {
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 681px) {
+  .d-none-desktop {
+    display: none;
+  }
+
+  .breadcrumb-container.sticky {
+    body:not([data-header-desktop='sticky']) & {
+      top: 0;
+    }
+
+    body:not([data-header-desktop='auto']) &+.container .content [id] {
+      scroll-margin-top: calc(var(--#{$prefix}scroll-mt) + var(--#{$prefix}breadcrumb-height));
+    }
+  }
+
+  [data-header-desktop='normal'] .page .content [id] {
+    --#{$prefix}scroll-mt: #{$global-scroll-margin-top};
+  }
+}
+
+@media (max-width: 680px) {
+  #header-desktop {
+    display: none;
+  }
+
+  #header-mobile {
+    display: block;
+  }
+
+  .d-none-mobile {
+    display: none !important;
+  }
+
+  .breadcrumb-container.sticky {
+    body:not([data-header-mobile='sticky']) & {
+      top: 0;
+    }
+
+    body:not([data-header-mobile='auto']) &+.container .content [id] {
+      scroll-margin-top: calc(var(--#{$prefix}scroll-mt) + var(--#{$prefix}breadcrumb-height));
+    }
+  }
+
+  [data-header-mobile='normal'] .page .content [id] {
+    --#{$prefix}scroll-mt: #{$global-scroll-margin-top};
+  }
+
+  %page-style {
+    width: 100% !important;
+  }
+
+  .page .categories-card .card-item,
+  .page .collections-card .card-item {
+    width: 100%;
+  }
+
+  footer .footer-container {
+    font-size: .618rem;
+  }
+
+  .pagination .page-item {
+    margin: 0 5px;
+  }
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 1.27cm;
+  }
+
+  .page {
+    width: 100% !important;
+    padding-top: 0 !important;
+
+    &.single .single-title,
+    &.single .single-subtitle,
+    &.single .post-meta {
+      text-align: center;
+    }
+
+    h1:not(.single-title),
+    .page-break-before {
+      page-break-before: always;
+    }
+
+    .page-break-after {
+      page-break-after: always;
+    }
+  }
+
+  .print-d-none {
+    display: none !important;
+  }
+}
