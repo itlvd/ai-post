@@ -174,7 +174,7 @@ enableEmoji = true
   toLower = false
 [[related.indices]]
   applyFilter = false
-  cardinalityThreshold = 0
+  cardinalityThreshold = 10
   name = 'keywords'
   pattern = ''
   toLower = false
@@ -1204,10 +1204,10 @@ enableEmoji = true
       # FixIt 0.2.14 | NEW Giscus comments config
       [params.page.comment.giscus]
         enable = true
-        repo = "itlvd/levandong.dev"
-        repoId = "R_kgDOMl5GGA"
-        category = "Comment"
-        categoryId = "DIC_kwDOMl5GGM4Ch8HU"
+        repo = "itlvd/learn.io.vn"
+        repoId = "R_kgDOPhMOkA"
+        category = "General"
+        categoryId = "DIC_kwDOPhMOkM4CuY3g"
         mapping = "title"
         origin = "https://giscus.app" # FixIt NEW | 0.3.7 Or set it to your self-hosted domain
         strict = "0" # FixIt NEW | 0.2.18
@@ -1215,7 +1215,7 @@ enableEmoji = true
         reactionsEnabled = "1"
         emitMetadata = "0"
         inputPosition = "top" # ["top", "bottom"]
-        lang = ""
+        # lang = ""
         lightTheme = "light"
         darkTheme = "dark"
         lazyLoad = true
