@@ -2,8 +2,7 @@
 title: Changing default Grub boot options
 date: 2024-03-23 03:21:58
 draft: false
-author: "Lê Văn Đông"
-authorLink: "https://www.levandong.dev"
+author: "levandong"
 
 tags: ["Linux", "Tips"]
 categories: ["Linux", "Tips"]

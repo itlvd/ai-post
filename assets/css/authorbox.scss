@@ -1,0 +1,95 @@
+.authorbox {
+  background-color: #ffffff;
+  border: 1px solid #e1e5e9;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  transition: box-shadow 0.3s ease;
+}
+
+.authorbox:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.authorbox__avatar {
+  margin: 0 0 1.5rem 0;
+}
+
+.authorbox__avatar .avatar {
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border: 3px solid #f8f9fa;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.authorbox__header {
+  margin-bottom: 1rem;
+}
+
+.authorbox__name {
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #2c3e50;
+  display: block;
+}
+
+.authorbox__description {
+  color: #6c757d;
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.authorbox__social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.authorbox__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  color: #ffffff;
+}
+
+.authorbox__social-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Social platform colors - because apparently you need me to do this too */
+
+.authorbox__social-link--website {
+  background-color: #6c757d;
+}
+
+.authorbox__social-link--linkedin {
+  background-color: #0077b5;
+}
+
+.authorbox__social-link--github {
+  background-color: #333333;
+}
+
+.authorbox__social-link--facebook {
+  background-color: #1877f2;
+}
+
+.authorbox__social-link--twitter {
+  background-color: #1da1f2;
+}
+
+.authorbox__social-link--instagram {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
