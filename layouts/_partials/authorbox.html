@@ -1,14 +1,14 @@
 {{- if .Params.author }}
-{{- $author := index .Site.Data.authors (.Params.author | default .Site.Author.code) -}}
+{{/*  {{- $author := index .Site.Data.authors (.Params.author | default .Site.Author.code) -}}  */}}
+
+{{- $authorKey := .Params.author | default "default" -}}
+{{ $author := index .Site.Data.authors $authorKey }}{{- .Store.Set "author" $author -}}
+{{- if not $author -}}
+{{- $author = index .Site.Data.authors "default" -}}
+{{- end -}}
 <div class="authorbox">
   <figure class="authorbox__avatar">
-    {{- if $author.avatar }}
     <img alt="{{ $author.name }} avatar" src="{{ $author.avatar | relURL }}" class="avatar" height="90" width="90">
-    {{- else }}
-    <div class="avatar avatar--default" style="width: 90px; height: 90px; background-color: #f0f0f0; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-      {{ partial "svg/author.svg" (dict "class" "avatar__icon" "style" "width: 40px; height: 40px; fill: #666;") }}
-    </div>
-    {{- end }}
   </figure>
 
   {{- with $author.name }}

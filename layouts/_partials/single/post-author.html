@@ -1,5 +1,9 @@
 {{- $params := .Params | merge .Site.Params.page -}}
-{{ $author := index .Site.Data.authors (.Params.author | default "default") }}{{- .Store.Set "author" $author -}}
+{{- $authorKey := .Params.author | default "default" -}}
+{{ $author := index .Site.Data.authors $authorKey }}{{- .Store.Set "author" $author -}}
+{{- if not $author -}}
+{{- $author = index .Site.Data.authors "default" -}}
+{{- end -}}
 {{- $optim := slice
 (dict "Process" "resize 16x16 Center webp q75" "descriptor" "16w")
 (dict "Process" "resize 24x24 Center webp q75" "descriptor" "24w")
@@ -7,7 +11,7 @@
 -}}
 
 <span class="post-author">
-  {{- $content := $author.name | default "AI TOP" -}}
+  {{- $content := $author.name | default "default" -}}
   {{- $icon := dict "Class" "fa-solid fa-user-circle" -}}
   {{- /* Deprecate $params.authorAvatar in favor of $params.showAvatar and add front matter gravatar {bool} */ -}}
   {{- if $author.avatar | and $params.authorAvatar -}}
