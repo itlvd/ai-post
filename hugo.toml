@@ -366,7 +366,7 @@ enableEmoji = true
 # taxonomy: ["HTML", "RSS"]
 # term: ["HTML", "RSS"]
 [outputs]
-  home = ["HTML", "RSS", "JSON", "archives"]
+  home = ["HTML", "RSS", "JSON", "archives", "search"]
   page = ["HTML", "MarkDown"]
   section = ["HTML", "RSS"]
   taxonomy = ["HTML"]
@@ -460,7 +460,7 @@ enableEmoji = true
   [params.search]
     enable = true
     # type of search engine ["algolia", "fuse"]
-    type = "algolia"
+    type = "fuse"
     # max index length of the chunked content
     contentLength = 4000
     # placeholder of the search bar
@@ -484,10 +484,11 @@ enableEmoji = true
       findAllMatches = false
       location = 0
       threshold = 0.3
-      distance = 100
+      distance = 200
       ignoreLocation = false
       useExtendedSearch = false
       ignoreFieldNorm = false
+      keys = ["title", "tags", "permalink", "summary", "content"]
 
   # Header config
   [params.header]
