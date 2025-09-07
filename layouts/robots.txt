@@ -97,6 +97,4 @@ Disallow: /
 User-agent: ClaudeBot
 Disallow: /
 
-# Algolia-Crawler-Verif: 8AC287A69EC5B636
-
 Sitemap: {{ "/sitemap.xml" | absURL }}

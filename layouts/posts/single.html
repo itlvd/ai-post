@@ -186,8 +186,6 @@
     {{- /* Related Content */ -}}
     {{- partial "single/related.html" . -}}
 
-    {{- partial "authorbox.html" . -}}
-
     {{- /* Reward before Footer */ -}}
     {{- $reward := .Store.Get "reward" -}}
     {{- if eq $reward.position "before" -}}
@@ -213,6 +211,8 @@
 
     {{- /* Custom block after post footer */ -}}
     {{- block "custom-post__footer:after" . }}{{ end -}}
+
+    {{- partial "authorbox.html" . -}}
 
     {{- /* Comment */ -}}
     {{- partial "single/comment.html" . -}}

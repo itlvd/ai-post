@@ -422,16 +422,16 @@ enableEmoji = true
 
   # Author Configuration
   # [params.author]
-  #   name = "Lê Văn Đông"
-  #   email = "itlvd@outlook.com"
-  #   link = "https://levandong.com"
+  #   name = ""
+  #   email = ""
+  #   link = ""
   #   avatar = ""
 
 
   # FixIt 0.3.0 | NEW public Git repository information only then enableGitInfo is true
   [params.gitInfo]
     # e.g. "https://github.com/hugo-fixit/docs"
-    repo = "https://github.com/itlvd/levandong.com"
+    repo = "https://github.com/itlvd/learn.io.vn"
     branch = "main"
     # the content directory path relative to the root of the repository
     dir = "content"
@@ -442,7 +442,7 @@ enableEmoji = true
   # App icon config
   [params.app]
     # optional site title override for the app when added to an iOS home screen or Android launcher
-    title = "Dong's Notes"
+    title = "AI TOP"
     # whether to omit favicon resource links
     noFavicon = false
     # modern SVG favicon to use in place of older style .png and .ico files
