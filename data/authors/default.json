@@ -1,5 +1,6 @@
 {
   "name": "AI TOP",
   "bio": "AI TOP is a technical blog for developers from developers",
-  "avatar": "/media/authors/aitop.png"
+  "avatar": "/logo.png",
+  "link": "/author/default"
 }
